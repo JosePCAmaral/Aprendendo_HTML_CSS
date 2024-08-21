@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forms</title>
+</head>
+<body>
+    <h1>FORMULÁRIO</h1>
+    <form action="" method="post" autocomplete="on">
+        <p>
+            <label for="in1">Numero 1:</label>
+            <input type="number" name="n1" id="in1" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+        </p>
+        <p>
+            <label for="in2">Numero 2:</label>
+            <input type="number" name="n2" id="in2" min="0" max="50" required oninput="isoma.innerHTML = Number(in1.value) + Number(in2.value)">
+        </p>
+        <p>
+            <label for="isoma">Soma: </label>
+            <output name="soma" id="isoma">0</output>
+        </p>
+        <p>
+            <label for="irange">Range: </label>
+            <input type="range" name="range" id="irange" min="0" max="1000" value="500" oninput="inum.innerHTML = Number(irange.value)">
+            <output name="valor" id="inum">500</output>
+        </p>
+        <p>
+            <label for="iano">Ano de Nascimento: </label>
+            <input type="number" name="ano" id="iano" min="1900" max="2024" value="2000" oninput="iidade.innerHTML = 2024 - Number(iano.value)">
+        </p>
+        <p>
+            <label for="iidade">Sua idade é: </label>
+            <output name="idade" id="iidade">24</output>
+        </p>
+        <p>
+            <label for="ianom">Ano Nascimento mae: </label>
+            <input type="number" name="anom" id="ianom" min="1900" max="2024" value="2000" oninput="calcIdadeM()">
+        </p>
+        <p>
+            <label for="iidadem">Idade da mae é: </label>
+            <output name="idadem" id="iidadem">24</output>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+    <script>
+        function calcIdadeM(){
+            let atual = new Date().getFullYear()
+            iidadem.innerHTML = Number(atual) - Number(ianom.value)
+        }
+    </script>
+</body>
+</html>
